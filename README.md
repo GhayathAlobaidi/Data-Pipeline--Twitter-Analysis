@@ -38,6 +38,8 @@ STEPS:<br>
     - Update the 'api_auth.cfg' file that I have included in this repository with your:
       <i>API Key, API Secret Key, Access Token</i> and <i>Secret Access Token</i>
 
+<img width="1680" alt="Twitter 1" src="https://user-images.githubusercontent.com/37382927/97384578-3561f680-188d-11eb-931a-95efe2acc64d.png">
+
 2. Log onto you AWS account - preferebly using an IAM alias
     - Update the attached api_auth.cfg with your AWS <i>Access Key ID</i> and <i>Secret Access Key</i>
     - When I ran the project certain elements could not be executed in Northen California.  Thus I set the region to US West (Oregon)
