@@ -2,9 +2,9 @@
 
 ![1](https://user-images.githubusercontent.com/37382927/96356103-df2bd100-109e-11eb-8230-108d0b215e2a.png)
 
-This is a project that I recently worked on which allows one to stream and analyze the sentiment of live tweets from Twitter based on a certain keyword such as "bitcoin." The tweets are sent to AWS Comprehend and return sentiment analysis as Positive, Negative and Neutral. 
+This is a project that I recently worked on which allows one to stream and analyze the sentiment of live tweets from Twitter based on a certain keyword such as "bitcoin." With the help of AWS Lambda function,  the tweets are sent to AWS Comprehend which returns a sentiment analysis as Positive, Negative and Neutral. 
 
-The result is visualzed on AWS Kibana via AWS Elastic Search and look like the following: 
+The result is also visualzed on AWS Kibana via AWS Elastic Search and can be customized like the following: 
 
 Positive Sentiment:
 
