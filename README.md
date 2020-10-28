@@ -30,12 +30,16 @@ STEPS:<br>
 * Please note that the following steps assume that you have a basic working knowledge of AWS Console and services such as Cloud9, Lambda, Elastic Searh, etc.  Also please note that although this is run on AWS Free Tier Account, leaving services running (such as Elastic Search) will incurr costs so please turn off services after testing. 
 
 1. Sign up for a Twitter Developer account via https://developer.twitter.com/en
-    - Create a Project App (answer a few questions regarding your app- in my case it was student project)
-    - Once approved and given credentials, make sure to save and update the attached api_auth.cfg file with your:
+    - This step is important in order to get access to the Twitter API (500,000 Tweets allowed per month)
+    - Apply for a student version access (answer a few questions regarding your account and usage- in my case it was a student project)
+    - Once approved you will be given a Twitter <i>API Key</i> and <i>API Secret Key<i>.
+    - You will then have to a create and name your new App and which will be provided with an <i>Access Token</i> and <i>Secret Access Token</i>.
+    - Update the 'api_auth.cfg' file that I have included in this repository with your:
       <i>API Key, API Secret Key, Access Token</i> and <i>Secret Access Token</i>
 
 2. Log onto you AWS account - preferebly using an IAM alias
-    - Update the attached api_auth.cfg with your AWS <i>Access Key ID</i> and <Secret access Key
+    - Update the attached api_auth.cfg with your AWS <i>Access Key ID</i> and <i>Secret Access Key</i>
+    - When I ran the project certain elements could not be executed in Northen California.  Thus I set the region to US West (Oregon)
 
 3. Create a Cloud9 IDE using:
     - t2.micro (1 GiB RAM + 1 vCPU)
