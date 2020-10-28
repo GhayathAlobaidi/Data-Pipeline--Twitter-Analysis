@@ -41,25 +41,37 @@ STEPS:<br>
 
 <img width="1680" alt="Twitter 2" src="https://user-images.githubusercontent.com/37382927/97384821-c2a54b00-188d-11eb-89d6-6c6564ff35b0.png">
 
-2. Log onto you AWS account - preferebly using an IAM alias
+2. Log onto you AWS account using an account that has admin access (preferebly an IAM alias and not your root account)
     - Update the attached api_auth.cfg with your AWS <i>Access Key ID</i> and <i>Secret Access Key</i>
     - When I ran the project certain elements could not be executed in Northen California.  Thus I set the region to US West (Oregon)
 
-3. Create a Cloud9 IDE instance (in this example: twitterBot) using default options:<br>
+3a. Create a Cloud9 IDE instance (in this example: twitterBot) using default options:<br>
     - <i> t2.micro (1 GiB RAM + 1 vCPU)
       Free-tier eligible. Ideal for educational users and exploration.</i>
     - Amazon Linux
     - Use your default VPC and subnet
  
- <img width="1680" alt="Cloud9 2" src="https://user-images.githubusercontent.com/37382927/97385730-8ffc5200-188f-11eb-84cb-4cc75751965e.png">    
+<img width="1680" alt="Cloud9 1 copy" src="https://user-images.githubusercontent.com/37382927/97386063-42ccb000-1890-11eb-83d8-2d306d0bb84d.png">
    
-   - Create a new Python script In the Cloud9 environment (File -> New File)
+   b. Create a new Python script in the Cloud9 environment (File -> New File)
       - Copy and paste the code from the <i>twitter-streaming.py</i> in this repository
       - You can rename the file but remember the Python file name as it will matter when AWS services call on it in the next steps
-      - Load the <i>api_auth.cfg</i> file that you have update in steps 1 and 2
-
+      - The streaming variable  kinese firehose will be created in Step 4
+      
+<img width="1680" alt="Cloud9 2" src="https://user-images.githubusercontent.com/37382927/97385730-8ffc5200-188f-11eb-84cb-4cc75751965e.png">  
+   
+   c. Create <i>api_auth.cfg</i> file which we have updated in steps 1 and 2.
+      - This file holds the credentials that twitter-streaming.py will use to access the Twitter API and AWS services.
+      
 <img width="1680" alt="Cloud9 3" src="https://user-images.githubusercontent.com/37382927/97385733-912d7f00-188f-11eb-8925-9fee67a833db.png">
 
+   d. Use pip to install the modules need to run twitter-streaming.py 
+      - Install AWS SDK boto3: <i>sudo pip install boto3</i>
+      - Install configparser: <i>sudoe pip install configparser</i>
+      - Install Tweepy
+          - Close and open a new bash terminal in Cloud9 in order for this to pip to work
+          - <pip install --
+   
 <img width="1680" alt="Cloud9 4" src="https://user-images.githubusercontent.com/37382927/97385735-925eac00-188f-11eb-8063-ea2092fee1fb.png">
 
 4. Setup AWS Lambda Function which will be used via AWS Kinesis
@@ -67,9 +79,14 @@ STEPS:<br>
 
 5. Setup AWS Kinesis Firehose and use Lambda function created in step 4 as its "Data Transformation"
 
-6. Setup AWS Elastic Search
+6. Setup AWS Elastic Search with the following configuration:
+    -
+    - t2small instance
+    - For the sake of simplicity we will setup a public domain access policy: iPv4 address.  Remember that this is not recommended to be reunning for      longer period. 
 
-7. Run twitter-streaming.py script on Cloud9
+7. Launch AWS Kibana and analyze the collected data 
+
+8. Run twitter-streaming.py script on Cloud9
     - Run the code for about 15 minutes to collecte data on the provided keyword
     
-8. Launch AWS Kibana and analyze the collected data 
+
