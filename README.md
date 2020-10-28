@@ -32,13 +32,14 @@ STEPS:<br>
 1. Sign up for a Twitter Developer account via https://developer.twitter.com/en
     - This step is important in order to get access to the Twitter API (500,000 Tweets allowed per month)
     - Apply for a student version access (answer a few questions regarding your account and usage- in my case it was a student project)
-    - Once approved you will be given a Twitter <i>API Key</i> and <i>API Secret Key<i>.
-    - You will then have to a create and name your new App (named it AWSComprehend-GA) and which will be provided with an <i>Access Token</i> and                 
-    <i>Secret Access Token</i>.
+    - Once approved you will be given a Twitter <i>API Key</i> and <i>API Secret Key</i>.
+    - You will then have to a create and name your new App (named it AWSComprehend-GA) and which will be provided with an <i>Access Token</i> and            <i>Secret Access Token</i>.
     - Update the 'api_auth.cfg' file that I have included in this repository with your:
       <i>API Key, API Secret Key, Access Token</i> and <i>Secret Access Token</i>
 
 <img width="1680" alt="Twitter 1" src="https://user-images.githubusercontent.com/37382927/97384578-3561f680-188d-11eb-931a-95efe2acc64d.png">
+
+<img width="1680" alt="Twitter 2" src="https://user-images.githubusercontent.com/37382927/97384821-c2a54b00-188d-11eb-89d6-6c6564ff35b0.png">
 
 2. Log onto you AWS account - preferebly using an IAM alias
     - Update the attached api_auth.cfg with your AWS <i>Access Key ID</i> and <i>Secret Access Key</i>
