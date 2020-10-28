@@ -31,9 +31,11 @@ STEPS:<br>
 
 1. Sign up for a Twitter Developer account via https://developer.twitter.com/en
     - Create a Project App (answer a few questions regarding your app- in my case it was student project)
-    - Once approved and given credentials, make sure to save your API Key and API Secret Key in a seperate file
+    - Once approved and given credentials, make sure to save and update the attached api_auth.cfg file with your:
+      <i>API Key, API Secret Key, Access Token</i> and <i>Secret Access Token</i>
 
 2. Log onto you AWS account - preferebly using an IAM alias
+    - Update the attached api_auth.cfg with your AWS <i>Access Key ID</i> and <Secret access Key
 
 3. Create a Cloud9 IDE using:
     - t2.micro (1 GiB RAM + 1 vCPU)
