@@ -30,15 +30,15 @@ STEPS:<br>
 * Please note that the following steps assume that you have a basic working knowledge of AWS Console and services such as Cloud9, Lambda, Elastic Searh, etc.  Also please note that although this is run on AWS Free Tier Account, leaving services running (such as Elastic Search) will incurr costs so please turn off services after testing. 
 
 1. Sign up for a Twitter Developer account via https://developer.twitter.com/en
-  - Create a Project App (answer a few questions regarding your app- in my case it was student project)
-  - Once approved and given credentials, make sure to save your API Key and API Secret Key in a seperate file
+    - Create a Project App (answer a few questions regarding your app- in my case it was student project)
+    - Once approved and given credentials, make sure to save your API Key and API Secret Key in a seperate file
 
 2. Log onto you AWS account - preferebly using an IAM alias
 
 3. Create a Cloud9 IDE using:
-  • t2.micro (1 GiB RAM + 1 vCPU)
-    Free-tier eligible. Ideal for educational users and exploration.
+    - t2.micro (1 GiB RAM + 1 vCPU)
+      Free-tier eligible. Ideal for educational users and exploration.
     
-  • Load the two files Python and CFG
+    - Load the two files streaming-twitter.py and api_auth.cfg
     
 
