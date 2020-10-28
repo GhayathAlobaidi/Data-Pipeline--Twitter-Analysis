@@ -43,4 +43,14 @@ STEPS:<br>
     
     - Load the two files streaming-twitter.py and api_auth.cfg
     
+4. Setup AWS Lambda Function which will be used via AWS Kinesis
+    - Used attached lambda_function script attached
 
+5. Setup AWS Kinesis Firehose and use Lambda function created in step 4 as its "Data Transformation"
+
+6. Setup AWS Elastic Search
+
+7. Run twitter-streaming.py script on Cloud9
+    - Run the code for about 15 minutes to collecte data on the provided keyword
+    
+8. Launch AWS Kibana and analyze the collected data 
