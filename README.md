@@ -6,11 +6,8 @@ This is a project that I recently worked on which allows one to stream and analy
 
 -Tweets are pulled using a Python code and fed into AWS Kinesis Firehose.  
 -AWS Kinesis Firehose then passes the tweets to an AWS Lambda function. 
-
 -Lambda, running a Python code, will then pass the tweets into AWS Comprehend.
-
 -AWS Comprehend returns the sentiment analysis as Positive, Negative and Neture.
-
 -The sentiment analysis results are also sent into AWS Elastic Search and visualzed on AWS Kibana like the following: 
 
 Positive Sentiment:
