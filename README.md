@@ -46,7 +46,7 @@ STEPS:<br>
     - Update the attached <i>api_auth.cfg</i> with your AWS <i>Access Key ID</i> and <i>Secret Access Key</i> <br>
     - When I ran the project certain elements could not be executed in Northen California.  Thus, I set the region to US West (Oregon)<br>
 
-3a. Create a Cloud9 IDE instance (in this example: twitterBot) using default options:<br>
+3. Create a Cloud9 IDE instance (in this example: twitterBot) using default options:<br>
     - t2.micro (1 GiB RAM + 1 vCPU)<br>
       Free-tier eligible. Ideal for educational users and exploration.<br>
     - Amazon Linux<br>
@@ -54,19 +54,19 @@ STEPS:<br>
  
 <img width="1680" alt="Cloud9 1 copy" src="https://user-images.githubusercontent.com/37382927/97386063-42ccb000-1890-11eb-83d8-2d306d0bb84d.png">
 
-3b. Create a new Python script in the Cloud9 environment (File -> New File)
+  - Create a new Python script in the Cloud9 environment (File -> New File)
       - Copy and paste the code from the <i>twitter-streaming.py</i> in this repository.
       - You can rename the file but remember the Python file name as it will matter when AWS services call on it in the next steps.
       - Note that the variable 'DeliveryStreamName' points to 'twitter-stream' which is the Kinesis Firehose that will be created in Step 4.
       
 <img width="1680" alt="Cloud9 2" src="https://user-images.githubusercontent.com/37382927/97385730-8ffc5200-188f-11eb-84cb-4cc75751965e.png">  
 
- 3c. Create <i>api_auth.cfg</i> file which we have updated in steps 1 and 2.
+  - Create <i>api_auth.cfg</i> file which we have updated in steps 1 and 2.
       - This file holds the credentials that twitter-streaming.py will use to access the Twitter API and AWS services.
       
 <img width="1680" alt="Cloud9 3" src="https://user-images.githubusercontent.com/37382927/97385733-912d7f00-188f-11eb-8925-9fee67a833db.png">
 
- 4d. Use pip to install the modules need to run twitter-streaming.py:  <br>
+  - Use pip to install the modules need to run twitter-streaming.py:  <br>
       - Install AWS SDK boto3: <i>sudo pip install boto3</i> <br>
       - Install configparser: <i>sudoe pip install configparser</i> <br>
       - Install Tweepy <br>
