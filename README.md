@@ -33,7 +33,7 @@ STEPS:<br>
     - This step is important in order to get access to the Twitter API (500,000 Tweets allowed per month)
     - Apply for a student version access (answer a few questions regarding your account and usage- in my case it was a student project)
     - Once approved you will be given a Twitter <i>API Key</i> and <i>API Secret Key</i>.
-    - You will then have to a create and name your new App ( AWSComprehend-GA) and which will be provided with an <i>Access Token</i> and            <i>Secret Access Token</i>.
+    - You will then have to a create and name your new App (in this instance: AWSComprehend-GA) and which will be provided with an <i>Access Token</i> and <i>Secret Access Token</i>.
     - Update the 'api_auth.cfg' file that I have included in this repository with your:
       <i>API Key, API Secret Key, Access Token</i> and <i>Secret Access Token</i>
 
@@ -45,14 +45,23 @@ STEPS:<br>
     - Update the attached api_auth.cfg with your AWS <i>Access Key ID</i> and <i>Secret Access Key</i>
     - When I ran the project certain elements could not be executed in Northen California.  Thus I set the region to US West (Oregon)
 
-3. Create a Cloud9 IDE instance (i.e. twitterBot) using:<br>
-    - Keep Default options:
-      - <i> t2.micro (1 GiB RAM + 1 vCPU)
+3. Create a Cloud9 IDE instance (in this example: twitterBot) using default options:<br>
+    - <i> t2.micro (1 GiB RAM + 1 vCPU)
       Free-tier eligible. Ideal for educational users and exploration.</i>
-      - Use your default VPC and VPN
-     
-    - Load the two files streaming-twitter.py and api_auth.cfg
-    
+    - Amazon Linux
+    - Use your default VPC and subnet
+ 
+ <img width="1680" alt="Cloud9 2" src="https://user-images.githubusercontent.com/37382927/97385730-8ffc5200-188f-11eb-84cb-4cc75751965e.png">    
+   
+   - Create a new Python script In the Cloud9 environment (File -> New File)
+      - Copy and paste the code from the <i>twitter-streaming.py</i> in this repository
+      - You can rename the file but remember the Python file name as it will matter when AWS services call on it in the next steps
+      - Load the <i>api_auth.cfg</i> file that you have update in steps 1 and 2
+
+<img width="1680" alt="Cloud9 3" src="https://user-images.githubusercontent.com/37382927/97385733-912d7f00-188f-11eb-8925-9fee67a833db.png">
+
+<img width="1680" alt="Cloud9 4" src="https://user-images.githubusercontent.com/37382927/97385735-925eac00-188f-11eb-8063-ea2092fee1fb.png">
+
 4. Setup AWS Lambda Function which will be used via AWS Kinesis
     - Used attached lambda_function script attached
 
