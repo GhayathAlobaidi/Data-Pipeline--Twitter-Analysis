@@ -75,6 +75,8 @@ STEPS:<br>
    
 <img width="1680" alt="Cloud9 4" src="https://user-images.githubusercontent.com/37382927/97385735-925eac00-188f-11eb-8063-ea2092fee1fb.png">
 
+<img width="1680" alt="Cloud9 5" src="https://user-images.githubusercontent.com/37382927/97387521-634a3980-1893-11eb-9b67-5d5e198de5a9.png">
+
 4. Setup AWS Lambda Function which will be used via AWS Kinesis Firehose. <br>
     - Use the <i>lambda_function.py</i> script attached in this repository.<br>
 
