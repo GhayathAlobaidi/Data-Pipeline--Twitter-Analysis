@@ -2,13 +2,13 @@
 
 ![1](https://user-images.githubusercontent.com/37382927/96356103-df2bd100-109e-11eb-8230-108d0b215e2a.png)
 
-This is a project that I recently worked on which allows one to stream and analyze the sentiment of live tweets from Twitter based on a certain keyword such as "bitcoin." It involves a working relationship between Twitter, Python and Amazon Web Services. This requires one to have a Twitter Developer account and, of course, an AWS account (Free-Tier). The flow of the project is:
+This is a project that I recently worked on in my AWS Machine Learning Course at Santa Monica College with Professor Vicky Seno. The project enables one to stream and analyze the sentiment of live tweets from Twitter based on a certain keyword such as "bitcoin." It involves a working relationship between Twitter, Python and Amazon Web Services. This requires one to have a Twitter Developer account and, of course, an AWS account (Free-Tier). The flow of the project is:
 
   1. Tweets are pulled from the Twitter API after verifying credentials using a Python code running on AWS Cloud9.
   2. The code feeds the stream of tweets into AWS Kinesis Firehose. <br>
   2. AWS Kinesis Firehose then passes the tweets to an AWS Lambda function. <br>
   3. Lambda, also running a Python code, will then pass the tweets into AWS Comprehend.<br>
-  4. AWS Comprehend analyzes the tweets and returns the sentiment analysis as Positive, Negative and Neutral.<br>
+  4. AWS Comprehend analyzes the tweets and returns the sentiment analysis as Positive, Negative, Mixed and Neutral.<br>
   5. The sentiment analysis results are also sent into AWS Elastic Search and visualzed on AWS Kibana as the following: 
 
 Positive Sentiment:
@@ -35,7 +35,7 @@ STEPS:<br>
     - Apply for a student version access (answer a few questions regarding your account and usage- in my case it was a student project).
     - Once approved, you will be given a Twitter <i>API Key</i> and <i>API Secret Key</i>.
     - You will then have to a create and name your new App (in this instance: AWSComprehend-GA) which will be provided with an <i>Access Token</i> and <i>Secret Access Token</i>.
-    - Update the 'api_auth.cfg' file that I have included in this repository with your:
+    - Update the 'api_auth.cfg' file that included in this repository with your:
       <i>API Key, API Secret Key, Access Token</i> and <i>Secret Access Token</i>
 
 <img width="1680" alt="Twitter 1" src="https://user-images.githubusercontent.com/37382927/97384578-3561f680-188d-11eb-931a-95efe2acc64d.png">
@@ -55,7 +55,7 @@ STEPS:<br>
 <img width="1680" alt="Cloud9 1 copy" src="https://user-images.githubusercontent.com/37382927/97386063-42ccb000-1890-11eb-83d8-2d306d0bb84d.png">
 
   - Create a new Python script in the Cloud9 environment (File -> New File)
-      - Copy and paste the code from the <i>twitter-streaming.py</i> in this repository.
+      - Copy and paste the code from the <i>twitter-streaming.py</i> included in this repository.
       - You can rename the file but remember the Python file name as it will matter when AWS services call on it in the next steps.
       - Note that the variable 'DeliveryStreamName' points to 'twitter-stream' which is the Kinesis Firehose that will be created in Step 4.
       
