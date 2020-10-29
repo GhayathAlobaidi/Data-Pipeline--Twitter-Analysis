@@ -84,11 +84,9 @@ STEPS:<br>
 
 6. Setup AWS Elastic Search with the following configuration: <br>
     - t2small instance <br>
-    - For the sake of simplicity we will setup a public domain access policy: iPv4 address.  Remember that this is not recommended to be reunning for      longer period. <br>
-
-7. Launch AWS Kibana and analyze the collected data. <br>
+    - For the sake of simplicity we will setup a public domain access policy: iPv4 address (although this is not recommended for future setups).  Please remember: leaving this service running will eat up your Free-Tier usage and you will incurr costs.  Stop instances and services after running this test. <br>
 
 8. Run twitter-streaming.py script on Cloud9.
     - Run the code for about 15 minutes to collecte data on the provided keyword.
     
-
+7. Launch AWS Kibana and analyze the collected data. <br>
