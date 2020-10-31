@@ -98,9 +98,10 @@ This is a project that I recently worked on which enables one to stream and anal
 
 <img width="1680" alt="Lambda 4" src="https://user-images.githubusercontent.com/37382927/97771357-2bdcc680-1af9-11eb-958c-94c27fa8ca47.png">
     
-5. Setup AWS Kinesis Firehose using the Lambda function in step 4 as its "Data Transformation." <br>
-    - Name Kinesis Firehose the same name as the variable <i>DeliveryStreamName (twitter-stream)</i> which is located in the streaming-twitter.py script in Step 2.
-
+5. Setup AWS Kinesis Firehose
+    - If you recall in Step 2 in streaming-twitter.py, there is a variable in the script called <i>DeliveryStreamName</i>.  The variable points to <i>twitter-stream</i> which is the same name that we are going to name this Kinesis Firehose.  Otherwise, the Python script in Step 2 will not work since it will call on a Kinesis stream that is nonexistent or with a different name. 
+    - Use Lambda function in step 4 as its "Data Transformation." <br>
+    
 <img width="1680" alt="Kinesis 1" src="https://user-images.githubusercontent.com/37382927/97770487-0946af80-1af1-11eb-85ba-bdfc838b17c8.png">
 
 <img width="1680" alt="Kinesis 2" src="https://user-images.githubusercontent.com/37382927/97770493-19f72580-1af1-11eb-8f55-2adb5da98606.png">
