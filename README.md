@@ -32,27 +32,26 @@ This is a project that I recently worked on which enables one to stream and anal
 * Please note that the following steps assume that you have a basic working knowledge of AWS Console and services such as Cloud9, Lambda and Elastic Search.  Also, please note that although this project is run on AWS Free Tier Account, leaving services running (such as Elastic Search) will incurr costs. Thus, it's important to turn off services after testing to avoid charges. 
 
 1. Sign up for a Twitter Developer account via https://developer.twitter.com/en <br>
-
      - This step is important in order to get access to the Twitter API (500,000 Tweets allowed per month).
      - Apply for a student version access (answer a few questions regarding your account and usage- in my case it was a student project).
      - Once approved, you will be given a Twitter <i>API Key</i> and <i>API Secret Key</i>
      - You will then have to a create and name your new App (in this example: AWSComprehend-GA) which will be provided with an <i>Access Token</i> and   <i>Secret Access Token</i>.
      - Update the 'api_auth.cfg' file included in this repository with your:
-     <i>API Key, API Secret Key, Access Token</i> and <i>Secret Access Token</i>
+     <i>API Key, API Secret Key, Access Token</i> and <i>Secret Access Token</i><br>
 
 <img width="1680" alt="Twitter 1" src="https://user-images.githubusercontent.com/37382927/97384578-3561f680-188d-11eb-931a-95efe2acc64d.png">
 
 <img width="1680" alt="Twitter 2" src="https://user-images.githubusercontent.com/37382927/97384821-c2a54b00-188d-11eb-89d6-6c6564ff35b0.png">     
 
 2. Log onto your AWS account using an account that has admin access (preferebly an IAM alias and not your root account). 
-    • Update the attached <i>api_auth.cfg</i> with your AWS <i>Access Key ID</i> and <i>Secret Access Key</i>.
-    • In order to run this project, certain AWS services could not be executed in Northen California.  Thus, I set the region to US West (Oregon).
+    - Update the attached <i>api_auth.cfg</i> with your AWS <i>Access Key ID</i> and <i>Secret Access Key</i>.
+    - In order to run this project, certain AWS services could not be executed in Northen California.  Thus, I set the region to US West (Oregon).
 
 3. Create a Cloud9 IDE instance (in this example: twitterBot) using default options:<br>
     - <i>t2.micro (1 GiB RAM + 1 vCPU)</i>
       Free-tier eligible. Ideal for educational users and exploration.
     - Amazon Linux
-    - Use your default VPC and subnet. </li>
+    - Use your default VPC and subnet. </li><br>
   
 <img width="1680" alt="Cloud9 1 copy" src="https://user-images.githubusercontent.com/37382927/97386063-42ccb000-1890-11eb-83d8-2d306d0bb84d.png">
 
@@ -81,6 +80,7 @@ This is a project that I recently worked on which enables one to stream and anal
 
 4. Create a new Lambda Function which will receive the stream of tweets via Kinesis Firehose and then send to Comprehend. <br>
    Use the following configuration: <br>
+   
     - Choose the option: <i>Author from Scratch</i>
     - Name the function the same as the Cloud9 instance name set up in Step 3 (in this example: twitterbot).
     - <i>Runtime: Python 3.8</i>
