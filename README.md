@@ -128,13 +128,13 @@ This is a project that I recently worked on which enables one to stream and anal
         
 ![Elasticsearch 3](https://user-images.githubusercontent.com/37382927/97771418-f2f12180-1af9-11eb-848d-66194a2fe969.png)
 
-8. Run twitter-streaming.py script on Cloud9: <br>
+7. Run twitter-streaming.py script on Cloud9: <br>
 
     - Execute the code in Cloud9 bash terminal by typing the command <i>python streaming-twitter.py</i> 
     - Run the script for about 15-30 minutes to collecte data on the provided keyword (in this example-<i>bitcoin</i>).
 
 ![Twitter-streaming](https://user-images.githubusercontent.com/37382927/97771373-53cc2a00-1af9-11eb-8f7b-7889c94c7e10.png)
 
-7. Launch AWS Kibana and analyze the collected data: <br>
+8. Launch AWS Kibana and analyze the collected data: <br>
 
     - Please see images of the Pie Charts created for Postivie, Negative, Neutral and Mixed sentiment anaylsis at the beginning of this file. <br>
