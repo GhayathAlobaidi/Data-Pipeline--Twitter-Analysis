@@ -85,28 +85,37 @@ STEPS:<br>
     - <i>Runtime: Python 3.8</i>
     - Download <i>lambda_function.py</i> attached in this repository and enter as the code for your new Lambda function.<br> 
 
-<img width="1680" alt="Lambda 1" src="https://user-images.githubusercontent.com/37382927/97770188-5ecd8d00-1aee-11eb-9d21-269d862e1727.png">
+<img width="1680" alt="Lambda 1" src="https://user-images.githubusercontent.com/37382927/97770413-465e7200-1af0-11eb-969d-f4075c55577d.png">
 
     - After the function is created, Go to Permissions -> edit Role name
           - Edit the Lambda's policy JSON so it will have access to Comprehend with the following configuration:
           
-<img width="1680" alt="Lambda 2" src="https://user-images.githubusercontent.com/37382927/97770200-7c025b80-1aee-11eb-8acc-f95f6ee84b23.png">
+<img width="1680" alt="Lambda 2" src="https://user-images.githubusercontent.com/37382927/97770427-6857f480-1af0-11eb-8065-b7d0fb033353.png">
 
-<img width="1680" alt="Lambda 3" src="https://user-images.githubusercontent.com/37382927/97770211-8ae90e00-1aee-11eb-8f32-0cbf219f374a.png">
+<img width="1680" alt="Lambda 3" src="https://user-images.githubusercontent.com/37382927/97770434-760d7a00-1af0-11eb-9c6e-d496958c7164.png">
 
-5. Setup AWS Kinesis Firehose which willLambda function created in step 4 as its "Data Transformation." <br>
-    - 
+    - Change the Lamba's timeout time from 3 seconds to 3 minutes
+    
+5. Setup AWS Kinesis Firehose using the Lambda function in step 4 as its "Data Transformation." <br>
 
-6. Setup AWS Elastic Search domain & Kibana (in this example: "twitter") which will receive the sentiment analysis from twitterbot Lambda function. 
+<img width="1680" alt="Kinesis 1" src="https://user-images.githubusercontent.com/37382927/97770487-0946af80-1af1-11eb-85ba-bdfc838b17c8.png">
+
+<img width="1680" alt="Kinesis 2" src="https://user-images.githubusercontent.com/37382927/97770493-19f72580-1af1-11eb-8f55-2adb5da98606.png">
+
+<img width="1680" alt="Kinesis 3" src="https://user-images.githubusercontent.com/37382927/97770495-1c597f80-1af1-11eb-90cc-9a4866d5cfdb.png">
+
+<img width="1680" alt="Kinesis 4" src="https://user-images.githubusercontent.com/37382927/97770497-1d8aac80-1af1-11eb-8fa9-59de3ab86b58.png">
+
+6. Setup AWS Elastic Search domain & Kibana (in this example: "twitter") which will receive the sentiment analysis from our Kinesis Firehose. 
    Use the following configuration: <br>
-    - t2small instance <br>
+    - <i>t2small</i> instance <br>
     - For the sake of simplicity in this project, we will setup a public domain access policy: <i>iPv4 address :  * </i> and
-      we will uncheck "Require HTTPs for all traffic to the domain"
+      we will uncheck "Require HTTPs for all traffic to the domain."
           - Note: This is not recommended for future setups but once again we're doing this for a quick test in this project.
-    - Once active, we will modify twitter's access policy so it can access Kibana that we'll setup in the next steps. JSON data
-    - Please remember: leaving this service running will eat up your Free-Tier usage and you will incurr costs.  Stop instances and services after running this test. <br>
+    - Once active, we will modify Elastic Search domain <i>twitter's</i> access policy so it can access Kibana. We will use Kibana to visualze the results      
+        - Please remember: leaving this service running will eat up your Free-Tier usage and you will incurr costs.  Stop instances and services after   running this test. <br>
 
 8. Run twitter-streaming.py script on Cloud9.
     - Run the code for about 15 minutes to collecte data on the provided keyword.
-    
+
 7. Launch AWS Kibana and analyze the collected data. <br>
