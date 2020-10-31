@@ -36,7 +36,7 @@ This is a project that I recently worked on which enables one to stream and anal
      - This step is important in order to get access to the Twitter API (500,000 Tweets allowed per month).
      - Apply for a student version access (answer a few questions regarding your account and usage- in my case it was a student project).
      - Once approved, you will be given a Twitter <i>API Key</i> and <i>API Secret Key</i>
-     - You will then have to a create and name your new App (in this example: <i>AWSComprehend-GA<i>) which will be provided with an <i>Access Token</i> and   <i>Secret Access Token</i>.
+     - You will then have to a create and name your new App (in this example: <i>AWSComprehend-GA</i>) which will be provided with an <i>Access Token</i> and   <i>Secret Access Token</i>.
      - Update the <i>api_auth.cfg</i> file included in this repository with your:
      <i>API Key, API Secret Key, Access Token</i> and <i>Secret Access Token</i><br>
 
