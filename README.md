@@ -41,8 +41,8 @@ This is a project that I recently worked on which enables one to stream and anal
 
 <img width="1680" alt="Twitter 1" src="https://user-images.githubusercontent.com/37382927/97384578-3561f680-188d-11eb-931a-95efe2acc64d.png">
 
-<img width="1680" alt="Twitter 2" src="https://user-images.githubusercontent.com/37382927/97384821-c2a54b00-188d-11eb-89d6-6c6564ff35b0.png">
-     
+<img width="1680" alt="Twitter 2" src="https://user-images.githubusercontent.com/37382927/97384821-c2a54b00-188d-11eb-89d6-6c6564ff35b0.png">     
+
 2. Log onto your AWS account using an account that has admin access (preferebly an IAM alias and not your root account). 
     - Update the attached <i>api_auth.cfg</i> with your AWS <i>Access Key ID</i> and <i>Secret Access Key</i>.
     - In order to run this project, certain AWS services could not be executed in Northen California.  Thus, I set the region to US West (Oregon).
