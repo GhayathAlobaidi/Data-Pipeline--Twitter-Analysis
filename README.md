@@ -91,10 +91,10 @@ This is a project that I recently worked on which enables one to stream and anal
 
   - After the function is created, Go to Permissions -> edit Role name
      - Edit the Lambda's policy JSON so it will have access to Comprehend with the following configuration:
-          
-<img width="1680" alt="Lambda 2" src="https://user-images.githubusercontent.com/37382927/97770427-6857f480-1af0-11eb-8065-b7d0fb033353.png">
 
-<img width="1680" alt="Lambda 3" src="https://user-images.githubusercontent.com/37382927/97770434-760d7a00-1af0-11eb-9c6e-d496958c7164.png">
+<img width="1680" alt="Lambda 3" src="https://user-images.githubusercontent.com/37382927/97770434-760d7a00-1af0-11eb-9c6e-d496958c7164.png">         
+
+<img width="1680" alt="Lambda 2" src="https://user-images.githubusercontent.com/37382927/97770427-6857f480-1af0-11eb-8065-b7d0fb033353.png">
 
    - Change the Lamba's timeout time from 3 seconds to 3 minutes.
 
@@ -128,7 +128,8 @@ This is a project that I recently worked on which enables one to stream and anal
 ![Elasticsearch 3](https://user-images.githubusercontent.com/37382927/97771418-f2f12180-1af9-11eb-848d-66194a2fe969.png)
 
 8. Run twitter-streaming.py script on Cloud9.
-    - Run the code for about 15 minutes to collecte data on the provided keyword.
+    - Execute the code in Cloud9 bash terminal by typing the command <i>python streaming-twitter.py</i> 
+    - Run the script for about 15-30 minutes to collecte data on the provided keyword (in this example-<i>bitcoin</i>).
 
 ![Twitter-streaming](https://user-images.githubusercontent.com/37382927/97771373-53cc2a00-1af9-11eb-8f7b-7889c94c7e10.png)
 
