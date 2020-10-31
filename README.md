@@ -112,10 +112,11 @@ This is a project that I recently worked on which enables one to stream and anal
 
 6. Setup AWS Elastic Search domain & Kibana (in this example: "twitter") which will receive the sentiment analysis from our Kinesis Firehose. 
    Use the following configuration: <br>
-    - <i>t2small</i> instance <br>
+   
+    - t2small instance <br>
     - For the sake of simplicity in this project, we will setup a public domain access policy: <i>iPv4 address :  * </i> and
-      we will uncheck <i>"Require HTTPs for all traffic to the domain."</i>
-          - Note: This is not recommended for future setups but once again we're doing this for a quick test in this project.
+      we will uncheck <i>"Require HTTPs for all traffic to the domain."</i><br>
+             - Note: This is not recommended for future setups but once again we're doing this for a quick test in this project.
 
 <img width="1680" alt="Elasticsearch 1" src="https://user-images.githubusercontent.com/37382927/97771416-f08ec780-1af9-11eb-8145-6c9f5f052ac9.png">
 
