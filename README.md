@@ -4,13 +4,13 @@
 
 This is a project that I recently worked on which enables one to stream and analyze the sentiment of live tweets from Twitter based on a certain keyword such as "bitcoin." It involves a working relationship between Twitter, Python and Amazon Web Services. This requires one to have a Twitter Developer account and, of course, an AWS account (Free-Tier). The flow of the project is:
 
-  1. Tweets are pulled from the Twitter API after verifying credentials using a Python code running on AWS Cloud9.
-  2. The code feeds the stream of tweets into AWS Kinesis Firehose. <br>
-  2. AWS Kinesis Firehose then passes the tweets to an AWS Lambda function. <br>
-  3. Lambda, also running a Python code, will then pass the tweets into AWS Comprehend.<br>
-  4. AWS Comprehend analyzes the tweets and returns to Lambda the sentiment analysis as Positive, Negative, Mixed and Neutral.<br>
-  5. The sentiment analysis results are then sent back into Kinesis Firehose which will forward the data to AWS Elastic Search.
-  6. The data is visualzed on AWS Kibana as the following: 
+    1. Tweets are pulled from the Twitter API after verifying credentials using a Python code running on AWS Cloud9.
+    2. The code feeds the stream of tweets into AWS Kinesis Firehose. <br>
+    2. AWS Kinesis Firehose then passes the tweets to an AWS Lambda function. <br>
+    3. Lambda, also running a Python code, will then pass the tweets into AWS Comprehend.<br>
+    4. AWS Comprehend analyzes the tweets and returns to Lambda the sentiment analysis as Positive, Negative, Mixed and Neutral.<br>
+    5. The sentiment analysis results are then sent back into Kinesis Firehose which will forward the data to AWS Elastic Search.
+    6. The data is visualzed on AWS Kibana as the following: 
 
 Positive Sentiment:
 
@@ -28,16 +28,16 @@ Mixed Sentiment:
 
 ![Mixed](https://user-images.githubusercontent.com/37382927/96356289-1c915e00-10a1-11eb-95e2-9ccf1aef3fc8.png)
 
-STEPS:<br>
+# STEPS:<br>
 * Please note that the following steps assume that you have a basic working knowledge of AWS Console and services such as Cloud9, Lambda and Elastic Search.  Also, please note that although this project is run on AWS Free Tier Account, leaving services running (such as Elastic Search) will incurr costs. Thus, it's important to turn off services after testing to avoid charges. 
 
-1. Sign up for a Twitter Developer account via https://developer.twitter.com/en
-    - This step is important in order to get access to the Twitter API (500,000 Tweets allowed per month).
-    - Apply for a student version access (answer a few questions regarding your account and usage- in my case it was a student project).
-    - Once approved, you will be given a Twitter <i>API Key</i> and <i>API Secret Key</i>.
-    - You will then have to a create and name your new App (in this example: AWSComprehend-GA) which will be provided with an <i>Access Token</i> and <i>Secret Access Token</i>.
-    - Update the 'api_auth.cfg' file included in this repository with your:
-      <i>API Key, API Secret Key, Access Token</i> and <i>Secret Access Token</i>
+      1. Sign up for a Twitter Developer account via https://developer.twitter.com/en
+          - This step is important in order to get access to the Twitter API (500,000 Tweets allowed per month).
+          - Apply for a student version access (answer a few questions regarding your account and usage- in my case it was a student project).
+          - Once approved, you will be given a Twitter <i>API Key</i> and <i>API Secret Key</i>.
+          - You will then have to a create and name your new App (in this example: AWSComprehend-GA) which will be provided with an <i>Access Token</i> and   <i>Secret Access Token</i>.
+          - Update the 'api_auth.cfg' file included in this repository with your:
+          <i>API Key, API Secret Key, Access Token</i> and <i>Secret Access Token</i>
 
 <img width="1680" alt="Twitter 1" src="https://user-images.githubusercontent.com/37382927/97384578-3561f680-188d-11eb-931a-95efe2acc64d.png">
 
