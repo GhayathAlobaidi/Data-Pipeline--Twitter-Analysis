@@ -28,7 +28,7 @@ Mixed Sentiment:
 
 ![Mixed](https://user-images.githubusercontent.com/37382927/96356289-1c915e00-10a1-11eb-95e2-9ccf1aef3fc8.png)
 
-# STEPS:<br>
+### STEPS:<br>
 * Please note that the following steps assume that you have a basic working knowledge of AWS Console and services such as Cloud9, Lambda and Elastic Search.  Also, please note that although this project is run on AWS Free Tier Account, leaving services running (such as Elastic Search) will incurr costs. Thus, it's important to turn off services after testing to avoid charges. 
 
 1. Sign up for a Twitter Developer account via https://developer.twitter.com/en
@@ -43,13 +43,13 @@ Mixed Sentiment:
 
 <img width="1680" alt="Twitter 2" src="https://user-images.githubusercontent.com/37382927/97384821-c2a54b00-188d-11eb-89d6-6c6564ff35b0.png">
 
-2. Log onto you AWS account using an account that has admin access (preferebly an IAM alias and not your root account).<br>
-    - Update the attached <i>api_auth.cfg</i> with your AWS <i>Access Key ID</i> and <i>Secret Access Key</i>. <br>
-    - In order to run this project, certain AWS services could not be executed in Northen California.  Thus, I set the region to US West (Oregon).<br>
+2. Log onto you AWS account using an account that has admin access (preferebly an IAM alias and not your root account).
+    - Update the attached <i>api_auth.cfg</i> with your AWS <i>Access Key ID</i> and <i>Secret Access Key</i>. 
+    - In order to run this project, certain AWS services could not be executed in Northen California.  Thus, I set the region to US West (Oregon).
 
-3. Create a Cloud9 IDE instance (in this example: twitterBot) using default options:<br>
-    - t2.micro (1 GiB RAM + 1 vCPU)<br>
-      Free-tier eligible. Ideal for educational users and exploration.<br>
+3. Create a Cloud9 IDE instance (in this example: twitterBot) using default options:
+    - t2.micro (1 GiB RAM + 1 vCPU)
+      Free-tier eligible. Ideal for educational users and exploration.
     - Amazon Linux<br>
     - Use your default VPC and subnet. <br>
  
@@ -87,14 +87,14 @@ Mixed Sentiment:
 
 <img width="1680" alt="Lambda 1" src="https://user-images.githubusercontent.com/37382927/97770413-465e7200-1af0-11eb-969d-f4075c55577d.png">
 
-    - After the function is created, Go to Permissions -> edit Role name
-          - Edit the Lambda's policy JSON so it will have access to Comprehend with the following configuration:
+  - After the function is created, Go to Permissions -> edit Role name
+     - Edit the Lambda's policy JSON so it will have access to Comprehend with the following configuration:
           
 <img width="1680" alt="Lambda 2" src="https://user-images.githubusercontent.com/37382927/97770427-6857f480-1af0-11eb-8065-b7d0fb033353.png">
 
 <img width="1680" alt="Lambda 3" src="https://user-images.githubusercontent.com/37382927/97770434-760d7a00-1af0-11eb-9c6e-d496958c7164.png">
 
-    - Change the Lamba's timeout time from 3 seconds to 3 minutes
+   - Change the Lamba's timeout time from 3 seconds to 3 minutes.
     
 5. Setup AWS Kinesis Firehose using the Lambda function in step 4 as its "Data Transformation." <br>
 
@@ -110,7 +110,7 @@ Mixed Sentiment:
    Use the following configuration: <br>
     - <i>t2small</i> instance <br>
     - For the sake of simplicity in this project, we will setup a public domain access policy: <i>iPv4 address :  * </i> and
-      we will uncheck "Require HTTPs for all traffic to the domain."
+      we will uncheck <i>"Require HTTPs for all traffic to the domain."</i>
           - Note: This is not recommended for future setups but once again we're doing this for a quick test in this project.
     - Once active, we will modify Elastic Search domain <i>twitter's</i> access policy so it can access Kibana. We will use Kibana to visualze the results      
         - Please remember: leaving this service running will eat up your Free-Tier usage and you will incurr costs.  Stop instances and services after   running this test. <br>
