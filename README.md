@@ -98,7 +98,8 @@ This is a project that I recently worked on which enables one to stream and anal
 
 <img width="1680" alt="Lambda 4" src="https://user-images.githubusercontent.com/37382927/97771357-2bdcc680-1af9-11eb-958c-94c27fa8ca47.png">
     
-5. Setup AWS Kinesis Firehose
+5. Setup AWS Kinesis Firehose: <br>
+
     - If you recall in Step 2 in streaming-twitter.py, there is a variable in the script called <i>DeliveryStreamName</i>.  The variable points to <i>twitter-stream</i> which is the same name that we are going to name this Kinesis Firehose.  Otherwise, the Python script in Step 2 will not work since it will call on a Kinesis stream that is nonexistent or with a different name. 
     - Use Lambda function in step 4 as its "Data Transformation." <br>
     
@@ -127,7 +128,7 @@ This is a project that I recently worked on which enables one to stream and anal
         
 ![Elasticsearch 3](https://user-images.githubusercontent.com/37382927/97771418-f2f12180-1af9-11eb-848d-66194a2fe969.png)
 
-8. Run twitter-streaming.py script on Cloud9. <br>
+8. Run twitter-streaming.py script on Cloud9: <br>
 
     - Execute the code in Cloud9 bash terminal by typing the command <i>python streaming-twitter.py</i> 
     - Run the script for about 15-30 minutes to collecte data on the provided keyword (in this example-<i>bitcoin</i>).
