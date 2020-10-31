@@ -58,8 +58,7 @@ This is a project that I recently worked on which enables one to stream and anal
 
   - Create a new Python script in the Cloud9 environment (File -> New File).
       - Download and use <i>twitter-streaming.py</i> included in this repository.
-      - You can rename the file but please remember the name as it will matter when AWS services call on it in the next steps.
-      - Note that the variable <i>DeliveryStreamName</i> points to 'twitter-stream' which is the Kinesis Firehose that will be created in Step 4.
+      - Note that the variable <i>DeliveryStreamName</i> points to 'twitter-stream' which is the Kinesis Firehose that will be created in Step 5.
       
 <img width="1680" alt="Cloud9 2" src="https://user-images.githubusercontent.com/37382927/97385730-8ffc5200-188f-11eb-84cb-4cc75751965e.png">  
 
@@ -79,8 +78,7 @@ This is a project that I recently worked on which enables one to stream and anal
 
 <img width="1680" alt="Cloud9 5" src="https://user-images.githubusercontent.com/37382927/97387521-634a3980-1893-11eb-9b67-5d5e198de5a9.png">
 
-4. Create a new Lambda Function which will receive the stream of tweets via Kinesis Firehose and then send to Comprehend. <br>
-   Use the following configuration: <br>
+4. Create a new Lambda Function which will receive the stream of tweets via Kinesis Firehose and then send to Comprehend. Use the following configuration: <br>
    
     - Choose the option: Author from Scratch
     - Name the function the same as the Cloud9 instance name set up in Step 3 (in this example: <i>twitterbot</i>).
@@ -101,6 +99,7 @@ This is a project that I recently worked on which enables one to stream and anal
 <img width="1680" alt="Lambda 4" src="https://user-images.githubusercontent.com/37382927/97771357-2bdcc680-1af9-11eb-958c-94c27fa8ca47.png">
     
 5. Setup AWS Kinesis Firehose using the Lambda function in step 4 as its "Data Transformation." <br>
+    - Name Kinesis Firehose the same name as the variable <i>DeliveryStreamName (twitter-stream)</i> which is located in the streaming-twitter.py script in Step 2.
 
 <img width="1680" alt="Kinesis 1" src="https://user-images.githubusercontent.com/37382927/97770487-0946af80-1af1-11eb-85ba-bdfc838b17c8.png">
 
@@ -122,7 +121,7 @@ This is a project that I recently worked on which enables one to stream and anal
 
 <img width="1680" alt="Elasticsearch 2" src="https://user-images.githubusercontent.com/37382927/97771417-f1bff480-1af9-11eb-938c-32b704cdeca8.png">
 
-   - Once active, we will modify Elastic Search domain <i>twitter's</i> access policy so it can access Kibana. We will use Kibana to visualze the results.      
+   - Once active, we will modify Elastic Search domain <i>twitter's</i> access policy so it can access Kibana. Kibana will be used to visualze the results.      
         - Please remember: leaving this service running will eat up your Free-Tier usage and you will incurr costs.  Stop instances and services after   running this test. <br>
         
 ![Elasticsearch 3](https://user-images.githubusercontent.com/37382927/97771418-f2f12180-1af9-11eb-848d-66194a2fe969.png)
