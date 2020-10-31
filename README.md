@@ -38,7 +38,7 @@ This is a project that I recently worked on which enables one to stream and anal
      - Once approved, you will be given a Twitter <i>API Key</i> and <i>API Secret Key</i>
      - You will then have to a create and name your new App (in this example: <i>AWSComprehend-GA</i>) which will be provided with an <i>Access Token</i> and   <i>Secret Access Token</i>.
      - Update the <i>api_auth.cfg</i> file included in this repository with your:
-     <i>API Key, API Secret Key, Access Token</i> and <i>Secret Access Token</i><br>
+     <i>API Key, API Secret Key, Access Token</i> and <i>Secret Access Token</i>
 
 <img width="1680" alt="Twitter 1" src="https://user-images.githubusercontent.com/37382927/97384578-3561f680-188d-11eb-931a-95efe2acc64d.png">
 
@@ -52,7 +52,7 @@ This is a project that I recently worked on which enables one to stream and anal
     - t2.micro (1 GiB RAM + 1 vCPU)
       Free-tier eligible. Ideal for educational users and exploration.
     - Amazon Linux
-    - Use your default VPC and subnet. </li><br>
+    - Use your default VPC and subnet. </li>
   
 <img width="1680" alt="Cloud9 1 copy" src="https://user-images.githubusercontent.com/37382927/97386063-42ccb000-1890-11eb-83d8-2d306d0bb84d.png">
 
