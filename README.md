@@ -36,8 +36,8 @@ This is a project that I recently worked on which enables one to stream and anal
      - This step is important in order to get access to the Twitter API (500,000 Tweets allowed per month).
      - Apply for a student version access (answer a few questions regarding your account and usage- in my case it was a student project).
      - Once approved, you will be given a Twitter <i>API Key</i> and <i>API Secret Key</i>
-     - You will then have to a create and name your new App (in this example: AWSComprehend-GA) which will be provided with an <i>Access Token</i> and   <i>Secret Access Token</i>.
-     - Update the 'api_auth.cfg' file included in this repository with your:
+     - You will then have to a create and name your new App (in this example: <i>AWSComprehend-GA<i>) which will be provided with an <i>Access Token</i> and   <i>Secret Access Token</i>.
+     - Update the <i>api_auth.cfg</i> file included in this repository with your:
      <i>API Key, API Secret Key, Access Token</i> and <i>Secret Access Token</i><br>
 
 <img width="1680" alt="Twitter 1" src="https://user-images.githubusercontent.com/37382927/97384578-3561f680-188d-11eb-931a-95efe2acc64d.png">
@@ -46,10 +46,10 @@ This is a project that I recently worked on which enables one to stream and anal
 
 2. Log onto your AWS account using an account that has admin access (preferebly an IAM alias and not your root account). 
     - Update the attached <i>api_auth.cfg</i> with your AWS <i>Access Key ID</i> and <i>Secret Access Key</i>.
-    - In order to run this project, certain AWS services could not be executed in Northen California.  Thus, I set the region to US West (Oregon).
+    - In order to run this project, certain AWS services could not be executed in Northen California.  Thus, I set the region to US-West-2 (Oregon).
 
-3. Create a Cloud9 IDE instance (in this example: twitterBot) using default options:<br>
-    - <i>t2.micro (1 GiB RAM + 1 vCPU)</i>
+3. Create a Cloud9 IDE instance (in this example: <i>twitterBot</i>) using default options:<br>
+    - t2.micro (1 GiB RAM + 1 vCPU)
       Free-tier eligible. Ideal for educational users and exploration.
     - Amazon Linux
     - Use your default VPC and subnet. </li><br>
@@ -57,9 +57,9 @@ This is a project that I recently worked on which enables one to stream and anal
 <img width="1680" alt="Cloud9 1 copy" src="https://user-images.githubusercontent.com/37382927/97386063-42ccb000-1890-11eb-83d8-2d306d0bb84d.png">
 
   - Create a new Python script in the Cloud9 environment (File -> New File).
-      - Copy and paste the code from the <i>twitter-streaming.py</i> included in this repository.
+      - Download and use <i>twitter-streaming.py</i> included in this repository.
       - You can rename the file but please remember the name as it will matter when AWS services call on it in the next steps.
-      - Note that the variable 'DeliveryStreamName' points to 'twitter-stream' which is the Kinesis Firehose that will be created in Step 4.
+      - Note that the variable <i>DeliveryStreamName</i> points to 'twitter-stream' which is the Kinesis Firehose that will be created in Step 4.
       
 <img width="1680" alt="Cloud9 2" src="https://user-images.githubusercontent.com/37382927/97385730-8ffc5200-188f-11eb-84cb-4cc75751965e.png">  
 
@@ -73,7 +73,7 @@ This is a project that I recently worked on which enables one to stream and anal
       - Install configparser: <i>sudo pip install configparser</i> <br>
       - Install Tweepy <br>
           - Close and open a new bash terminal in Cloud9 in order for this to pip to work <br>
-          - <pip install --user tweepy <br>
+          - <i>pip install --user tweepy </i><br>
    
 <img width="1680" alt="Cloud9 4" src="https://user-images.githubusercontent.com/37382927/97385735-925eac00-188f-11eb-8063-ea2092fee1fb.png">
 
@@ -82,9 +82,9 @@ This is a project that I recently worked on which enables one to stream and anal
 4. Create a new Lambda Function which will receive the stream of tweets via Kinesis Firehose and then send to Comprehend. <br>
    Use the following configuration: <br>
    
-    - Choose the option: <i>Author from Scratch</i>
-    - Name the function the same as the Cloud9 instance name set up in Step 3 (in this example: twitterbot).
-    - <i>Runtime: Python 3.8</i>
+    - Choose the option: Author from Scratch
+    - Name the function the same as the Cloud9 instance name set up in Step 3 (in this example: <i>twitterbot</i>).
+    - Runtime: Python 3.8
     - Download <i>lambda_function.py</i> attached in this repository and enter as the code for your new Lambda function.<br> 
 
 <img width="1680" alt="Lambda 1" src="https://user-images.githubusercontent.com/37382927/97770413-465e7200-1af0-11eb-969d-f4075c55577d.png">
@@ -97,6 +97,8 @@ This is a project that I recently worked on which enables one to stream and anal
 <img width="1680" alt="Lambda 3" src="https://user-images.githubusercontent.com/37382927/97770434-760d7a00-1af0-11eb-9c6e-d496958c7164.png">
 
    - Change the Lamba's timeout time from 3 seconds to 3 minutes.
+
+<img width="1680" alt="Lambda 4" src="https://user-images.githubusercontent.com/37382927/97771357-2bdcc680-1af9-11eb-958c-94c27fa8ca47.png">
     
 5. Setup AWS Kinesis Firehose using the Lambda function in step 4 as its "Data Transformation." <br>
 
@@ -114,10 +116,20 @@ This is a project that I recently worked on which enables one to stream and anal
     - For the sake of simplicity in this project, we will setup a public domain access policy: <i>iPv4 address :  * </i> and
       we will uncheck <i>"Require HTTPs for all traffic to the domain."</i>
           - Note: This is not recommended for future setups but once again we're doing this for a quick test in this project.
-    - Once active, we will modify Elastic Search domain <i>twitter's</i> access policy so it can access Kibana. We will use Kibana to visualze the results      
+
+<img width="1680" alt="Elasticsearch 1" src="https://user-images.githubusercontent.com/37382927/97771416-f08ec780-1af9-11eb-8145-6c9f5f052ac9.png">
+
+<img width="1680" alt="Elasticsearch 2" src="https://user-images.githubusercontent.com/37382927/97771417-f1bff480-1af9-11eb-938c-32b704cdeca8.png">
+
+   - Once active, we will modify Elastic Search domain <i>twitter's</i> access policy so it can access Kibana. We will use Kibana to visualze the results.      
         - Please remember: leaving this service running will eat up your Free-Tier usage and you will incurr costs.  Stop instances and services after   running this test. <br>
+        
+![Elasticsearch 3](https://user-images.githubusercontent.com/37382927/97771418-f2f12180-1af9-11eb-848d-66194a2fe969.png)
 
 8. Run twitter-streaming.py script on Cloud9.
     - Run the code for about 15 minutes to collecte data on the provided keyword.
 
-7. Launch AWS Kibana and analyze the collected data. <br>
+![Twitter-streaming](https://user-images.githubusercontent.com/37382927/97771373-53cc2a00-1af9-11eb-8f7b-7889c94c7e10.png)
+
+7. Launch AWS Kibana and analyze the collected data:
+    - Please see images of the Pie Charts created for Postivie, Negative, Neutral and Mixed sentiment anaylsis at the beginning of this file. <br>
