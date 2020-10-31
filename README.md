@@ -8,8 +8,9 @@ This is a project that I recently worked on which enables one to stream and anal
   2. The code feeds the stream of tweets into AWS Kinesis Firehose. <br>
   2. AWS Kinesis Firehose then passes the tweets to an AWS Lambda function. <br>
   3. Lambda, also running a Python code, will then pass the tweets into AWS Comprehend.<br>
-  4. AWS Comprehend analyzes the tweets and returns the sentiment analysis as Positive, Negative, Mixed and Neutral.<br>
-  5. The sentiment analysis results are also sent into AWS Elastic Search and visualzed on AWS Kibana as the following: 
+  4. AWS Comprehend analyzes the tweets and returns to Lambda the sentiment analysis as Positive, Negative, Mixed and Neutral.<br>
+  5. The sentiment analysis results are then sent back into Kinesis Firehose which will forward the data to AWS Elastic Search.
+  6. The data is visualzed on AWS Kibana as the following: 
 
 Positive Sentiment:
 
@@ -77,18 +78,23 @@ STEPS:<br>
 
 <img width="1680" alt="Cloud9 5" src="https://user-images.githubusercontent.com/37382927/97387521-634a3980-1893-11eb-9b67-5d5e198de5a9.png">
 
-4. Create a new Lambda Function which will receive the stream of tweets via Kinesis Firehose and send to Comprehend. <br>
+4. Create a new Lambda Function which will receive the stream of tweets via Kinesis Firehose and then send to Comprehend. <br>
    Use the following configuration: <br>
     - Choose the option: <i>Author from Scratch</i>
     - Name the function the same as the Cloud9 instance name set up in Step 3 (in this example: twitterbot).
     - <i>Runtime: Python 3.8</i>
-    - Download <i>lambda_function.py</i> attached in this repository and enter as the code for your new Lambda function.<br>
-    
-    - After the function is created, Go to Permissions -> edit Role name
-          - Edit the Lambda's policy JSON so it will have access to Comprehend
- 
+    - Download <i>lambda_function.py</i> attached in this repository and enter as the code for your new Lambda function.<br> 
 
-5. Setup AWS Kinesis Firehose and use Lambda function created in step 4 as its "Data Transformation." <br>
+<img width="1680" alt="Lambda 1" src="https://user-images.githubusercontent.com/37382927/97770188-5ecd8d00-1aee-11eb-9d21-269d862e1727.png">
+
+    - After the function is created, Go to Permissions -> edit Role name
+          - Edit the Lambda's policy JSON so it will have access to Comprehend with the following configuration:
+          
+<img width="1680" alt="Lambda 2" src="https://user-images.githubusercontent.com/37382927/97770200-7c025b80-1aee-11eb-8acc-f95f6ee84b23.png">
+
+<img width="1680" alt="Lambda 3" src="https://user-images.githubusercontent.com/37382927/97770211-8ae90e00-1aee-11eb-8f32-0cbf219f374a.png">
+
+5. Setup AWS Kinesis Firehose which willLambda function created in step 4 as its "Data Transformation." <br>
     - 
 
 6. Setup AWS Elastic Search domain & Kibana (in this example: "twitter") which will receive the sentiment analysis from twitterbot Lambda function. 
