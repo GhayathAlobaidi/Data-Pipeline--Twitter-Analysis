@@ -32,6 +32,7 @@ This is a project that I recently worked on which enables one to stream and anal
 * Please note that the following steps assume that you have a basic working knowledge of AWS Console and services such as Cloud9, Lambda and Elastic Search.  Also, please note that although this project is run on AWS Free Tier Account, leaving services running (such as Elastic Search) will incurr costs. Thus, it's important to turn off services after testing to avoid charges. 
 
 1. Sign up for a Twitter Developer account via https://developer.twitter.com/en <br>
+
      - This step is important in order to get access to the Twitter API (500,000 Tweets allowed per month).
      - Apply for a student version access (answer a few questions regarding your account and usage- in my case it was a student project).
      - Once approved, you will be given a Twitter <i>API Key</i> and <i>API Secret Key</i>
