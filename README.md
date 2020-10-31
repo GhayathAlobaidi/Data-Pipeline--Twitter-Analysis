@@ -46,6 +46,12 @@ This is a project that I recently worked on which enables one to stream and anal
 2. Log onto your AWS account using an account that has admin access (preferebly an IAM alias and not your root account). 
     - Update the attached <i>api_auth.cfg</i> with your AWS <i>Access Key ID</i> and <i>Secret Access Key</i>.
     - In order to run this project, certain AWS services could not be executed in Northen California.  Thus, I set the region to US West (Oregon).
+
+3. Create a Cloud9 IDE instance (in this example: twitterBot) using default options:<br>
+    - <i>t2.micro (1 GiB RAM + 1 vCPU)</i>
+      Free-tier eligible. Ideal for educational users and exploration.
+    - Amazon Linux
+    - Use your default VPC and subnet. </li>
   
 <img width="1680" alt="Cloud9 1 copy" src="https://user-images.githubusercontent.com/37382927/97386063-42ccb000-1890-11eb-83d8-2d306d0bb84d.png">
 
