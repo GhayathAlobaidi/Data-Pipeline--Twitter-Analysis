@@ -12,19 +12,19 @@ This is a project that I recently worked on which enables one to stream and anal
   6. The sentiment analysis results are then sent back into Kinesis Firehose which will forward the data to AWS Elastic Search.
   7. The data is visualzed on AWS Kibana as the following: 
 
-Positive Sentiment:
+    Positive Sentiment:
 
 ![Positive](https://user-images.githubusercontent.com/37382927/96356280-0d121500-10a1-11eb-97b3-f168164cd3d2.png)
 
-Negative Sentiment:
+    Negative Sentiment:
 
 ![Negative](https://user-images.githubusercontent.com/37382927/96356288-1ac79a80-10a1-11eb-90d7-9f45346b6585.png)
 
-Netural Sentiment:
+    Netural Sentiment:
 
 ![Neutral](https://user-images.githubusercontent.com/37382927/96356284-156a5000-10a1-11eb-8553-de182eb86640.png)
 
-Mixed Sentiment:
+    Mixed Sentiment:
 
 ![Mixed](https://user-images.githubusercontent.com/37382927/96356289-1c915e00-10a1-11eb-95e2-9ccf1aef3fc8.png)
 
@@ -43,15 +43,18 @@ Mixed Sentiment:
 
 <img width="1680" alt="Twitter 2" src="https://user-images.githubusercontent.com/37382927/97384821-c2a54b00-188d-11eb-89d6-6c6564ff35b0.png">
 
-2. Log onto you AWS account using an account that has admin access (preferebly an IAM alias and not your root account).
-    - Update the attached <i>api_auth.cfg</i> with your AWS <i>Access Key ID</i> and <i>Secret Access Key</i>. 
+1. Sign up for a Twitter Developer account via https://developer.twitter.com/en
+     - This step is important in order to get access to the Twitter API (500,000 Tweets allowed per month).
+     
+2. Log onto your AWS account using an account that has admin access (preferebly an IAM alias and not your root account).
+    - Update the attached <i>api_auth.cfg</i> with your AWS <i>Access Key ID</i> and <i>Secret Access Key</i>.
     - In order to run this project, certain AWS services could not be executed in Northen California.  Thus, I set the region to US West (Oregon).
-
+    
 3. Create a Cloud9 IDE instance (in this example: twitterBot) using default options:
     - t2.micro (1 GiB RAM + 1 vCPU)
       Free-tier eligible. Ideal for educational users and exploration.
-    - Amazon Linux<br>
-    - Use your default VPC and subnet. <br>
+    - Amazon Linux
+    - Use your default VPC and subnet. 
  
 <img width="1680" alt="Cloud9 1 copy" src="https://user-images.githubusercontent.com/37382927/97386063-42ccb000-1890-11eb-83d8-2d306d0bb84d.png">
 
