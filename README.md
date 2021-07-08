@@ -2,6 +2,7 @@
 ### Twitter -> AWS Kinesis Firehose -> AWS Lambda -> AWS Comprehend -> AWS Kibana 
 
 <p align=center 
+   
 ![1](https://user-images.githubusercontent.com/37382927/96356103-df2bd100-109e-11eb-8230-108d0b215e2a.png)
 </p>
 
