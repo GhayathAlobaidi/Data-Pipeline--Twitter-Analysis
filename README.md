@@ -1,6 +1,4 @@
-
-<img src="https://user-images.githubusercontent.com/37382927/110361629-24708100-7ff5-11eb-8214-b92c2696f2eb.png" width="60" height="40"> # Data Pipeline: Twitter Analysis 
-
+# Data Pipeline: Twitter Analysis 
 ### Twitter -> AWS Kinesis Firehose -> AWS Lambda -> AWS Comprehend -> AWS Kibana 
 
 <p align=center 
