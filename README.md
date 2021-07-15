@@ -1,4 +1,4 @@
-# Data Pipeline: Twitter Sentiment Analysis 
+# Data Pipeline: Twitter Sentiment Analysis Project
 ### Twitter -> AWS Kinesis Firehose -> AWS Lambda -> AWS Comprehend -> AWS Kibana 
 
 <p align=center 
