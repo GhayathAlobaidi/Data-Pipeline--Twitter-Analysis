@@ -6,7 +6,7 @@
 ![1](https://user-images.githubusercontent.com/37382927/96356103-df2bd100-109e-11eb-8230-108d0b215e2a.png)
 </p>
 
-This is a project that I recently worked on which enables one to stream and analyze the sentiment of live tweets from Twitter based on a certain keyword such as "Bitcoin." It involves setting up a data pipeline between Twitter and AWS Services such as Kinesis, Comprehend and visualization tool Kibana. This requires one to have a Twitter Developer account and, of course, an AWS account (Free-Tier). The flow of the project is:
+This is a project that I recently worked on which enables one to stream and analyze the sentiment of live tweets from Twitter based on a certain keyword such as "Bitcoin." It involves setting up a data pipeline between Twitter and AWS Services such as Kinesis, Comprehend and BI visualization tool Kibana. This requires one to have a Twitter Developer account and, of course, an AWS account (Free-Tier). The flow of the project is:
 
   1. Tweets are pulled from the Twitter API after verifying credentials using a Python code running on AWS Cloud9.
   2. The code feeds the stream of tweets into AWS Kinesis Firehose. <br>
